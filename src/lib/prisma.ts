@@ -1,13 +1,11 @@
-// ESM-compatible dynamic import for PrismaClient
+// ESM-compatible import for PrismaClient
 let prisma: any;
 if (typeof window === "undefined") {
   let PrismaClient;
   try {
-    const prismaModule = await import("@prisma/client");
-    PrismaClient =
-      prismaModule.PrismaClient || prismaModule.default?.PrismaClient;
-    if (!PrismaClient)
-      throw new Error("PrismaClient not found in @prisma/client");
+    // This works for both ESM and CJS in all modern environments
+    const { PrismaClient: PrismaClientImport } = await import("@prisma/client");
+    PrismaClient = PrismaClientImport;
     const globalForPrisma = global as unknown as {
       prisma: typeof PrismaClient;
     };
