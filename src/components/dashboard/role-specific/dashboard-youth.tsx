@@ -48,6 +48,17 @@ interface NewsArticle {
   publishedAt: string;
 }
 
+// Add Job type definition
+
+type Job = {
+  id: string;
+  title: string;
+  company: string;
+  description: string;
+  salary: string;
+  // Add any other fields you use from the job object
+};
+
 function NewsCarousel() {
   const [companyNews, setCompanyNews] = useState<NewsArticle[]>([]);
   const [governmentNews, setGovernmentNews] = useState<NewsArticle[]>([]);
@@ -506,7 +517,7 @@ export function DashboardYouth() {
 
 // Jobs Marketplace Component
 function JobsMarketplace() {
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
