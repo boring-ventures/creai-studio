@@ -46,17 +46,12 @@ export function NewsCarousel({ className }: NewsCarouselProps) {
 
       // Fetch government/NGO news
       const govResponse = await fetch(
-        "/api/news?type=government&targetAudience=YOUTH&limit=6"
+        "/api/news?type=creai&targetAudience=YOUTH&limit=6"
       );
       const govData = await govResponse.json();
 
-      const ngoResponse = await fetch(
-        "/api/news?type=ngo&targetAudience=YOUTH&limit=6"
-      );
-      const ngoData = await ngoResponse.json();
-
       setCompanyNews(companyData.news || []);
-      setGovernmentNews([...(govData.news || []), ...(ngoData.news || [])]);
+      setGovernmentNews([...(govData.news || [])]);
     } catch (error) {
       console.error("Error fetching news:", error);
     } finally {

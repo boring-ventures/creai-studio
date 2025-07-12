@@ -42,7 +42,7 @@ interface RoleOption {
 const roleOptions: RoleOption[] = [
   {
     value: "YOUTH",
-    label: "Youth",
+    label: "CreAI",
     description:
       "Para jóvenes y adolescentes que buscan empleo y oportunidades de desarrollo",
     icon: User,
@@ -51,7 +51,7 @@ const roleOptions: RoleOption[] = [
   },
   {
     value: "COMPANIES",
-    label: "Company",
+    label: "CreAI",
     description:
       "Para empresas que buscan talento y publican ofertas de trabajo",
     icon: Building,
@@ -60,12 +60,11 @@ const roleOptions: RoleOption[] = [
   },
   {
     value: "MUNICIPAL_GOVERNMENTS",
-    label: "Municipality, NGO, or Center",
-    description:
-      "Para gobiernos municipales, ONGs, centros de capacitación y fundaciones",
+    label: "CreAI",
+    description: "Para CreAI",
     icon: Target,
     color: "bg-green-500",
-    examples: ["Alcaldías", "ONGs", "Centros de formación", "Fundaciones"],
+    examples: ["CreAI"],
   },
 ];
 
@@ -102,9 +101,9 @@ export function MockLoginScreen() {
       label: "Demo Company",
     },
     {
-      email: "municipality@demo.com",
+      email: "creai@demo.com",
       role: "MUNICIPAL_GOVERNMENTS" as UserRole,
-      label: "Demo Municipality",
+      label: "Demo CreAI",
     },
   ];
 
@@ -126,10 +125,8 @@ export function MockLoginScreen() {
       <div className="max-w-lg w-full space-y-6">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold text-gray-900">CEMSE</h1>
-          <p className="text-gray-600">
-            Centro de Empleabilidad y Emprendimiento
-          </p>
+          <h1 className="text-3xl font-bold text-gray-900">CreAI</h1>
+          <p className="text-gray-600">Plataforma CreAI</p>
         </div>
 
         {/* Login Form */}

@@ -98,50 +98,11 @@ export function AdaptiveHeader({
 
   // Get role-specific icon and label
   const getRoleInfo = (role?: UserRole | null) => {
-    switch (role) {
-      case "YOUTH":
-        return {
-          icon: User,
-          label: "Joven",
-          color: "bg-blue-100 text-blue-800",
-        };
-      case "ADOLESCENTS":
-        return {
-          icon: Users,
-          label: "Adolescente",
-          color: "bg-purple-100 text-purple-800",
-        };
-      case "COMPANIES":
-        return {
-          icon: Building2,
-          label: "Empresa",
-          color: "bg-green-100 text-green-800",
-        };
-      case "MUNICIPAL_GOVERNMENTS":
-        return {
-          icon: Shield,
-          label: "Gobierno",
-          color: "bg-red-100 text-red-800",
-        };
-      case "TRAINING_CENTERS":
-        return {
-          icon: BookOpen,
-          label: "Centro",
-          color: "bg-orange-100 text-orange-800",
-        };
-      case "NGOS_AND_FOUNDATIONS":
-        return {
-          icon: Target,
-          label: "ONG",
-          color: "bg-teal-100 text-teal-800",
-        };
-      default:
-        return {
-          icon: User,
-          label: "Usuario",
-          color: "bg-gray-100 text-gray-800",
-        };
-    }
+    return {
+      icon: User,
+      label: "CreAI",
+      color: "bg-blue-100 text-blue-800",
+    };
   };
 
   // Check if search should be shown for this role

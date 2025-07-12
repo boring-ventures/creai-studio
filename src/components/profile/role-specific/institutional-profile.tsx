@@ -45,36 +45,12 @@ export function InstitutionalProfile({
   };
 
   const getRoleInfo = () => {
-    switch (userRole) {
-      case "MUNICIPAL_GOVERNMENTS":
-        return {
-          title: "Perfil de Gobierno Municipal",
-          description: "Gestion de programas de empleabilidad y emprendimiento municipal",
-          badge: "Gobierno Municipal",
-          icon: Building,
-        };
-      case "TRAINING_CENTERS":
-        return {
-          title: "Perfil de Centro de Capacitacion",
-          description: "Administracion de programas educativos y de formacion",
-          badge: "Centro de Capacitacion",
-          icon: Award,
-        };
-      case "NGOS_AND_FOUNDATIONS":
-        return {
-          title: "Perfil de ONG/Fundacion",
-          description: "Gestion de programas sociales y de desarrollo",
-          badge: "ONG/Fundacion",
-          icon: Target,
-        };
-      default:
-        return {
-          title: "Perfil Institucional",
-          description: "Gestion institucional",
-          badge: "Institucion",
-          icon: Building,
-        };
-    }
+    return {
+      title: "Perfil CreAI",
+      description: "Gestión de programas CreAI",
+      badge: "CreAI",
+      icon: Building,
+    };
   };
 
   const getAvailableSections = () => {

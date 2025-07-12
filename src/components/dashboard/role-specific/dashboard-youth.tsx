@@ -326,6 +326,7 @@ export function DashboardYouth() {
     },
   ];
 
+  // Metrics at the top
   return (
     <div className="space-y-8 px-10 py-4">
       {/* Welcome Section with Animation */}
@@ -365,17 +366,8 @@ export function DashboardYouth() {
         </div>
       </motion.div>
 
-      {/* News Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-      >
-        <NewsCarousel />
-      </motion.div>
-
-      {/* Quick Stats with Animation - Single Row */}
-      <div className="grid grid-cols-3 gap-6">
+      {/* Metrics Row */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {modules.map((module, index) => (
           <motion.div
             key={module.title}
@@ -399,8 +391,11 @@ export function DashboardYouth() {
         ))}
       </div>
 
+      {/* Jobs Marketplace Section */}
+      <JobsMarketplace />
+
       {/* Main Modules with Animation */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {modules.map((module, index) => {
           const Icon = module.icon;
           return (
@@ -427,7 +422,6 @@ export function DashboardYouth() {
                     </div>
                   </div>
                 </CardHeader>
-
                 <CardContent>
                   {/* Actions */}
                   <div className="flex gap-3">
@@ -506,6 +500,112 @@ export function DashboardYouth() {
           </CardContent>
         </Card>
       </motion.div>
+    </div>
+  );
+}
+
+// Jobs Marketplace Component
+function JobsMarketplace() {
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchJobs();
+  }, []);
+
+  const fetchJobs = async () => {
+    try {
+      setLoading(true);
+      const res = await fetch("/api/jobs");
+      const data = await res.json();
+      setJobs(data.jobs || []);
+    } catch (error) {
+      setJobs([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[...Array(3)].map((_, i) => (
+          <Card key={i} className="animate-pulse">
+            <div className="h-32 bg-gray-200 rounded-t-lg" />
+            <CardContent className="p-4">
+              <div className="h-4 bg-gray-200 rounded mb-2" />
+              <div className="h-3 bg-gray-200 rounded mb-4" />
+              <div className="flex justify-between">
+                <div className="h-3 bg-gray-200 rounded w-16" />
+                <div className="h-3 bg-gray-200 rounded w-12" />
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    );
+  }
+
+  if (!jobs.length) {
+    return (
+      <div className="text-center py-12">
+        <Briefcase className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+        <h3 className="text-lg font-semibold mb-2">
+          No hay empleos disponibles
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Vuelve más tarde para ver nuevas oportunidades.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <h2 className="text-2xl font-bold mb-4">Empleos Destacados</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {jobs.map((job) => (
+          <Card
+            key={job.id}
+            className="group hover:shadow-lg transition-all duration-300"
+          >
+            <CardHeader className="flex flex-row items-center gap-3">
+              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                {job.company?.logo ? (
+                  <img
+                    src={job.company.logo}
+                    alt={job.company.name}
+                    className="w-10 h-10 object-contain"
+                  />
+                ) : (
+                  <Briefcase className="w-6 h-6 text-gray-400" />
+                )}
+              </div>
+              <div>
+                <CardTitle className="text-lg line-clamp-1">
+                  {job.title}
+                </CardTitle>
+                <CardDescription className="text-sm text-muted-foreground line-clamp-1">
+                  {job.company?.name}
+                </CardDescription>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm mb-2 line-clamp-2">{job.description}</p>
+              <div className="flex items-center justify-between mt-2">
+                <span className="text-xs font-medium text-green-600">
+                  {job.salaryMin && job.salaryMax
+                    ? `${job.salaryMin} - ${job.salaryMax} ${job.salaryCurrency || ""}`
+                    : "Salario no especificado"}
+                </span>
+                <Button asChild size="sm" variant="outline">
+                  <Link href={`/jobs/${job.id}`}>Ver Detalles</Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }

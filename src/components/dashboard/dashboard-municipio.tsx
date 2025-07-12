@@ -71,15 +71,15 @@ export function DashboardMunicipio() {
   const [companies, setCompanies] = useState<Company[]>([
     {
       id: "1",
-      name: "Cemse Innovación",
+      name: "CreAI Innovación",
       description:
         "Empresa líder en desarrollo de soluciones tecnológicas innovadoras para el sector empresarial boliviano. Nos especializamos en transformación digital y consultoría estratégica.",
       logo: "/placeholder.svg?height=60&width=60",
       industry: "Tecnología",
       size: "51-200 empleados",
       founded: "2018",
-      website: "https://cemse.com.bo",
-      email: "contacto@cemse.com.bo",
+      website: "https://creai.com.bo",
+      email: "contacto@creai.com.bo",
       phone: "+591 2 2345678",
       address: "Av. Arce 2345, Edificio Torre Empresarial, Piso 12",
       city: "La Paz",
@@ -166,9 +166,7 @@ export function DashboardMunicipio() {
     <div className="space-y-6 px-4">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">
-            Dashboard Municipio{" "}
-          </h1>
+          <h1 className="text-3xl font-bold tracking-tight">Dashboard CreAI</h1>
           <p className="text-muted-foreground">
             Gestión y análisis de empresas registradas
           </p>
@@ -184,7 +182,7 @@ export function DashboardMunicipio() {
             <DialogHeader>
               <DialogTitle>Crear Nueva Empresa</DialogTitle>
               <DialogDescription>
-                Registra una nueva empresa en la plataforma CEMSE
+                Registra una nueva empresa en la plataforma CreAI
               </DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">
@@ -197,7 +195,7 @@ export function DashboardMunicipio() {
                     onChange={(e) =>
                       setNewCompany({ ...newCompany, name: e.target.value })
                     }
-                    placeholder="Ej: Cemse Innovación"
+                    placeholder="Ej: CreAI Innovación"
                   />
                 </div>
                 <div className="grid gap-2">

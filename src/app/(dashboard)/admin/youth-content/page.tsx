@@ -162,7 +162,7 @@ export default function YouthContentManagementPage() {
   const [institutionForm, setInstitutionForm] = useState<Institution>({
     id: "",
     name: "",
-    type: "municipality",
+    type: "creai",
     description: "",
     location: "",
     address: "",
@@ -302,7 +302,7 @@ export default function YouthContentManagementPage() {
     setInstitutionForm({
       id: "",
       name: "",
-      type: "municipality",
+      type: "creai",
       description: "",
       location: "",
       address: "",
@@ -609,15 +609,7 @@ export default function YouthContentManagementPage() {
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="municipality">
-                            Municipalidad
-                          </SelectItem>
-                          <SelectItem value="ngo">ONG</SelectItem>
-                          <SelectItem value="foundation">Fundación</SelectItem>
-                          <SelectItem value="training_center">
-                            Centro de Capacitación
-                          </SelectItem>
-                          <SelectItem value="government">Gobierno</SelectItem>
+                          <SelectItem value="creai">CreAI</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>

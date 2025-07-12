@@ -23,7 +23,7 @@ import type { UserRole } from "@prisma/client";
 
 const commonTeams = [
   {
-    name: "CEMSE Platform",
+    name: "CreAI",
     logo: Command,
     plan: "Employability & Entrepreneurship",
   },
@@ -42,7 +42,7 @@ const commonTeams = [
 // YOUTH navigation
 export const youthSidebarData: SidebarData = {
   user: {
-    name: "Usuario Joven",
+    name: "CreAI",
     email: "youth@example.com",
     avatar: "/avatars/youth.jpg",
   },
@@ -64,11 +64,6 @@ export const youthSidebarData: SidebarData = {
         {
           title: "Mis Postulaciones",
           url: "/my-applications",
-          icon: FileText,
-        },
-        {
-          title: "Mis Entrevistas",
-          url: "/my-interviews",
           icon: FileText,
         },
       ],
@@ -94,77 +89,12 @@ export const youthSidebarData: SidebarData = {
             },
           ],
         },
-        {
-          title: "Emprendimiento",
-          icon: Lightbulb,
-          items: [
-            {
-              title: "Hub de Emprendimiento",
-              url: "/entrepreneurship",
-            },
-            {
-              title: "Simulador de Plan de Negocios",
-              url: "/business-plan-simulator",
-            },
-            {
-              title: "Centro de Recursos",
-              url: "/entrepreneurship/resources",
-            },
-            {
-              title: "Publicar mi Emprendimiento",
-              url: "/publish-entrepreneurship",
-            },
-            {
-              title: "Mentorías",
-              url: "/mentorship",
-            },
-          ],
-        },
       ],
     },
-    {
-      title: "Recursos de Emprendimiento",
-      items: [
-        {
-          title: "Directorio de Instituciones",
-          url: "/entrepreneurship/directory",
-          icon: Building2,
-        },
-        {
-          title: "Red de Contactos",
-          url: "/entrepreneurship/network",
-          icon: Users,
-        },
-      ],
-    },
-    {
-      title: "Información",
-      items: [
-        {
-          title: "Noticias",
-          icon: Newspaper,
-          url: "/news",
-        },
-      ],
-    },
-    {
-      title: "Personal",
-      items: [
-        {
-          title: "Mi Perfil",
-          url: "/profile",
-          icon: User,
-        },
-        // {
-        //   title: "Reportes Personales",
-        //   url: "/reports/personal",
-        //   icon: BarChart3,
-        // },
-      ],
-    },
+    // REMOVED: Información section
+    // REMOVED: Personal section remains
   ],
 };
-
 
 // ADOLESCENTS navigation (similar to youth but no reports)
 export const adolescentSidebarData: SidebarData = {
@@ -232,18 +162,10 @@ export const adolescentSidebarData: SidebarData = {
               title: "Centro de Recursos",
               url: "/entrepreneurship/resources",
             },
-            // {
-            //   title: "Directorio de Instituciones",
-            //   url: "/entrepreneurship/directory",
-            // },
             {
               title: "Publicar mi Emprendimiento",
               url: "/publish-entrepreneurship",
             },
-            // {
-            //   title: "Red de Contactos",
-            //   url: "/entrepreneurship/network",
-            // },
             {
               title: "Mentorías",
               url: "/mentorship",
@@ -336,8 +258,8 @@ export const companySidebarData: SidebarData = {
 // MUNICIPAL GOVERNMENTS navigation
 export const municipalGovernmentSidebarData: SidebarData = {
   user: {
-    name: "Gobierno Municipal",
-    email: "municipality@example.com",
+    name: "CreAI",
+    email: "creai@example.com",
     avatar: "/avatars/government.jpg",
   },
   teams: commonTeams,
@@ -524,8 +446,8 @@ export const trainingCenterSidebarData: SidebarData = {
 // NGOS AND FOUNDATIONS navigation
 export const ngoFoundationSidebarData: SidebarData = {
   user: {
-    name: "ONG/Fundación",
-    email: "ngo@example.com",
+    name: "CreAI",
+    email: "creai@example.com",
     avatar: "/avatars/ngo.jpg",
   },
   teams: commonTeams,
@@ -650,7 +572,7 @@ export const youthSidebarItems: SidebarItem[] = [
       },
       {
         title: "Mis Postulaciones",
-        icon: Briefcase,
+        icon: FileText,
         href: "/my-applications",
       },
     ],
@@ -661,62 +583,10 @@ export const youthSidebarItems: SidebarItem[] = [
       {
         title: "Capacitación",
         icon: GraduationCap,
-        href: "/courses",
-        items: [
-          {
-            title: "Explorar Cursos",
-            href: "/courses",
-          },
-          {
-            title: "Mis Cursos",
-            href: "/my-courses",
-          },
-        ],
-      },
-      {
-        title: "Emprendimiento",
-        icon: Lightbulb,
-        href: "/entrepreneurship",
-        items: [
-          {
-            title: "Recursos",
-            href: "/entrepreneurship/resources",
-          },
-          {
-            title: "Directorio",
-            href: "/entrepreneurship/directory",
-          },
-          {
-            title: "Red de Contactos",
-            href: "/entrepreneurship/network",
-          },
-        ],
+        href: "/my-courses",
       },
     ],
   },
-  {
-    title: "Información",
-    items: [
-      {
-        title: "Noticias",
-        icon: Newspaper,
-        href: "/news",
-      },
-    ],
-  },
-  {
-    title: "Personal",
-    items: [
-      {
-        title: "Mi Perfil",
-        icon: UserCircle,
-        href: "/profile",
-      },
-      // {
-      //   title: "Reportes Personales",
-      //   icon: BarChart3,
-      //   href: "/reports",
-      // },
-    ],
-  },
+  // REMOVED: Información section
+  // Personal section remains
 ];

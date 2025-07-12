@@ -218,22 +218,7 @@ export function ProfileCompletionIndicator({
       : 0;
 
   const getRoleDisplayName = (role: UserRole) => {
-    switch (role) {
-      case "YOUTH":
-        return "Joven";
-      case "ADOLESCENTS":
-        return "Adolescente";
-      case "COMPANIES":
-        return "Empresa";
-      case "MUNICIPAL_GOVERNMENTS":
-        return "Gobierno Municipal";
-      case "TRAINING_CENTERS":
-        return "Centro de Capacitación";
-      case "NGOS_AND_FOUNDATIONS":
-        return "ONG/Fundación";
-      default:
-        return "Usuario";
-    }
+    return "CreAI";
   };
 
   return (

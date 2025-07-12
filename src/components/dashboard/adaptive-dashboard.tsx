@@ -14,9 +14,7 @@ import { DashboardMunicipio } from "./dashboard-municipio";
 
 // Placeholder components for other roles (to be implemented later)
 function DashboardMunicipalGovernment() {
-  return (
-    <DashboardMunicipio/>
-  );
+  return <DashboardMunicipio />;
 }
 
 function DashboardTrainingCenter() {
@@ -46,17 +44,15 @@ function DashboardNGO() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Dashboard Social</h1>
-        <p className="text-muted-foreground">
-          Panel de ONG/Fundación - En desarrollo
-        </p>
+        <h1 className="text-3xl font-bold tracking-tight">Dashboard CreAI</h1>
+        <p className="text-muted-foreground">Panel CreAI - En desarrollo</p>
       </div>
       <Card>
         <CardHeader>
           <CardTitle>Panel en Construcción</CardTitle>
         </CardHeader>
         <CardContent>
-          <p>El dashboard para ONGs y fundaciones está en desarrollo.</p>
+          <p>El dashboard para CreAI está en desarrollo.</p>
         </CardContent>
       </Card>
     </div>

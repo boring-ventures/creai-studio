@@ -543,7 +543,7 @@ export default function CourseManagementPage() {
             <div className="text-center py-12">
               <BookOpen className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">
-                No se encontraron cursos
+                sos
               </h3>
               <p className="text-muted-foreground mb-4">
                 {searchQuery ||

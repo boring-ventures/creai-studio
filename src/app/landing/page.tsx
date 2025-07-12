@@ -1,8 +1,22 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Users, TrendingUp, Zap, Globe, Smartphone, Leaf } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  ArrowRight,
+  Users,
+  TrendingUp,
+  Zap,
+  Globe,
+  Smartphone,
+  Leaf,
+} from "lucide-react";
 
 export default function LandingPage() {
   const emprendimientos = [
@@ -78,7 +92,7 @@ export default function LandingPage() {
       icon: Smartphone,
       color: "bg-red-500",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
@@ -90,11 +104,14 @@ export default function LandingPage() {
               <Zap className="w-5 h-5 text-white" />
             </div>
             <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Cemse
+              CreAI
             </h1>
           </div>
           <Link href="/login">
-            <Button variant="outline" className="hover:bg-blue-50 bg-transparent">
+            <Button
+              variant="outline"
+              className="hover:bg-blue-50 bg-transparent"
+            >
               Iniciar Sesión
             </Button>
           </Link>
@@ -116,8 +133,9 @@ export default function LandingPage() {
             del Futuro
           </h1>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            Explora una colección curada de startups innovadoras que están transformando industrias y creando el futuro.
-            Únete a nuestra comunidad de emprendedores visionarios.
+            Explora una colección curada de startups innovadoras que están
+            transformando industrias y creando el futuro. Únete a nuestra
+            comunidad de emprendedores visionarios.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/login">
@@ -130,7 +148,11 @@ export default function LandingPage() {
               </Button>
             </Link>
             <Link href="/login">
-              <Button size="lg" variant="outline" className="px-8 bg-transparent">
+              <Button
+                size="lg"
+                variant="outline"
+                className="px-8 bg-transparent"
+              >
                 Ver Dashboard
               </Button>
             </Link>
@@ -142,15 +164,18 @@ export default function LandingPage() {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Emprendimientos Destacados</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Emprendimientos Destacados
+            </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Conoce las startups más prometedoras en diferentes sectores tecnológicos
+              Conoce las startups más prometedoras en diferentes sectores
+              tecnológicos
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {emprendimientos.map((emprendimiento) => {
-              const IconComponent = emprendimiento.icon
+              const IconComponent = emprendimiento.icon;
               return (
                 <Card
                   key={emprendimiento.id}
@@ -170,28 +195,46 @@ export default function LandingPage() {
                     <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
                       {emprendimiento.nombre}
                     </CardTitle>
-                    <CardDescription className="text-gray-600">{emprendimiento.descripcion}</CardDescription>
+                    <CardDescription className="text-gray-600">
+                      {emprendimiento.descripcion}
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3 mb-4">
                       <div className="flex justify-between items-center">
                         <div>
-                          <p className="text-sm font-medium text-gray-700">Categoría</p>
-                          <p className="text-lg font-semibold text-gray-900">{emprendimiento.categoria}</p>
+                          <p className="text-sm font-medium text-gray-700">
+                            Categoría
+                          </p>
+                          <p className="text-lg font-semibold text-gray-900">
+                            {emprendimiento.categoria}
+                          </p>
                         </div>
                         <div className="text-right">
-                          <p className="text-sm font-medium text-gray-700">Subcategoría</p>
-                          <p className="text-lg font-semibold text-blue-600">{emprendimiento.subcategoria}</p>
+                          <p className="text-sm font-medium text-gray-700">
+                            Subcategoría
+                          </p>
+                          <p className="text-lg font-semibold text-blue-600">
+                            {emprendimiento.subcategoria}
+                          </p>
                         </div>
                       </div>
                       <div className="flex justify-between items-center">
                         <div>
-                          <p className="text-sm font-medium text-gray-700">Año de Creación</p>
-                          <p className="text-lg font-semibold text-green-600">{emprendimiento.anoCreacion}</p>
+                          <p className="text-sm font-medium text-gray-700">
+                            Año de Creación
+                          </p>
+                          <p className="text-lg font-semibold text-green-600">
+                            {emprendimiento.anoCreacion}
+                          </p>
                         </div>
                         <div className="text-right">
-                          <p className="text-sm font-medium text-gray-700">Crecimiento</p>
-                          <p className="text-lg font-semibold text-purple-600">{emprendimiento.crecimiento}</p>
+                          <p className="text-sm font-medium text-gray-700">
+                            Crecimiento
+                          </p>
+                          <p className="text-lg font-semibold text-purple-600">
+                            {emprendimiento.crecimiento}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -203,7 +246,7 @@ export default function LandingPage() {
                     </Link>
                   </CardContent>
                 </Card>
-              )
+              );
             })}
           </div>
         </div>
@@ -212,13 +255,20 @@ export default function LandingPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="container mx-auto text-center max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">¿Listo para Emprender?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            ¿Listo para Emprender?
+          </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Únete a nuestra plataforma y accede a herramientas exclusivas, networking y oportunidades de inversión.
+            Únete a nuestra plataforma y accede a herramientas exclusivas,
+            networking y oportunidades de inversión.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/login">
-              <Button size="lg" variant="secondary" className="px-8 bg-white text-blue-600 hover:bg-gray-100">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="px-8 bg-white text-blue-600 hover:bg-gray-100"
+              >
                 Acceder a la Plataforma
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
@@ -234,16 +284,21 @@ export default function LandingPage() {
             <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
               <Zap className="w-5 h-5 text-white" />
             </div>
-            <h3 className="text-xl font-bold">Cemse</h3>
+            <h3 className="text-xl font-bold">CreAI</h3>
           </div>
-          <p className="text-gray-400 mb-6">Conectando emprendedores con el futuro de la innovación</p>
+          <p className="text-gray-400 mb-6">
+            Conectando emprendedores con el futuro de la innovación
+          </p>
           <Link href="/login">
-            <Button variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 bg-transparent">
+            <Button
+              variant="outline"
+              className="border-gray-600 text-gray-300 hover:bg-gray-800 bg-transparent"
+            >
               Iniciar Sesión
             </Button>
           </Link>
         </div>
       </footer>
     </div>
-  )
+  );
 }
