@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { UserRole } from "@prisma/client";
 import type { Profile } from "@/types/profile";
 import { Button } from "@/components/ui/button";
 import {

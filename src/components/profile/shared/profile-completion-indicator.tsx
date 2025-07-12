@@ -11,8 +11,15 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, AlertCircle, Target, ArrowRight } from "lucide-react";
-import { UserRole } from "@prisma/client";
 import type { Profile } from "@/types/profile";
+
+type UserRole =
+  | "YOUTH"
+  | "ADOLESCENTS"
+  | "COMPANIES"
+  | "MUNICIPAL_GOVERNMENTS"
+  | "TRAINING_CENTERS"
+  | "NGOS_AND_FOUNDATIONS";
 
 interface ProfileSection {
   id: string;

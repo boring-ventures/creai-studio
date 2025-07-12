@@ -53,10 +53,17 @@ interface NewsArticle {
 type Job = {
   id: string;
   title: string;
-  company: string;
+  company: {
+    name: string;
+    logo: string;
+    // add other fields if needed
+  };
   description: string;
   salary: string;
-  // Add any other fields you use from the job object
+  salaryMin?: number;
+  salaryMax?: number;
+  salaryCurrency?: string;
+  // add any other fields you use from the job object
 };
 
 function NewsCarousel() {
@@ -605,9 +612,12 @@ function JobsMarketplace() {
               <p className="text-sm mb-2 line-clamp-2">{job.description}</p>
               <div className="flex items-center justify-between mt-2">
                 <span className="text-xs font-medium text-green-600">
-                  {job.salaryMin && job.salaryMax
+                  {typeof job.salaryMin === "number" &&
+                  typeof job.salaryMax === "number"
                     ? `${job.salaryMin} - ${job.salaryMax} ${job.salaryCurrency || ""}`
-                    : "Salario no especificado"}
+                    : job.salary
+                      ? job.salary
+                      : "Salario no especificado"}
                 </span>
                 <Button asChild size="sm" variant="outline">
                   <Link href={`/jobs/${job.id}`}>Ver Detalles</Link>
