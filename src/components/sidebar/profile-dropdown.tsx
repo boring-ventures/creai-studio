@@ -32,6 +32,14 @@ type UserRole =
   | "NGOS_AND_FOUNDATIONS"
   | "SUPERADMIN";
 
+// Add Profile type to ensure profile.role can be UserRole | null
+interface Profile {
+  firstName?: string;
+  lastName?: string;
+  profilePicture?: string | null;
+  role: UserRole | null;
+}
+
 export function ProfileDropdown() {
   const router = useRouter();
   const { profile, user, isLoading } = useCurrentUser();
@@ -124,7 +132,7 @@ export function ProfileDropdown() {
               Settings
             </Link>
           </DropdownMenuItem>
-          {profile?.role === "SUPERADMIN" && (
+          {profile?.role && profile.role.toString() === "SUPERADMIN" && (
             <DropdownMenuItem asChild>
               <Link href="/admin">
                 <BadgeCheck className="mr-2 h-4 w-4" />

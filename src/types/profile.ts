@@ -1,9 +1,24 @@
-import type {
-  UserRole,
-  UserStatus,
-  EducationLevel,
-  CompanySize,
-} from "@prisma/client";
+type UserRole =
+  | "YOUTH"
+  | "ADOLESCENTS"
+  | "COMPANIES"
+  | "MUNICIPAL_GOVERNMENTS"
+  | "TRAINING_CENTERS"
+  | "NGOS_AND_FOUNDATIONS"
+  | "SUPERADMIN";
+
+type UserStatus = "ACTIVE" | "INACTIVE" | "PENDING" | "SUSPENDED";
+
+type EducationLevel =
+  | "PRIMARY"
+  | "SECONDARY"
+  | "TERTIARY"
+  | "BACHELOR"
+  | "MASTER"
+  | "DOCTORATE"
+  | "OTHER";
+
+type CompanySize = "SMALL" | "MEDIUM" | "LARGE";
 
 export interface Profile {
   id: string;

@@ -19,7 +19,14 @@ import {
   UserCircle,
 } from "lucide-react";
 import type { SidebarData, SidebarItem } from "../types";
-import type { UserRole } from "@prisma/client";
+
+type UserRole =
+  | "YOUTH"
+  | "ADOLESCENTS"
+  | "COMPANIES"
+  | "MUNICIPAL_GOVERNMENTS"
+  | "TRAINING_CENTERS"
+  | "NGOS_AND_FOUNDATIONS";
 
 const commonTeams = [
   {
