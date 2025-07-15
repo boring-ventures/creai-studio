@@ -13,7 +13,6 @@ const nextConfig = {
       },
     ],
   },
-  output: "standalone",
   // Security headers configuration
   async headers() {
     return [
